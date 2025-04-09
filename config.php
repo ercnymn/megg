@@ -1,0 +1,21 @@
+<?php
+// Hata raporlama (geliştirme aşamasında açık, canlıda kapalı olmalı)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Site temel bilgileri
+define("SITE_TITLE", "Meg Otomotiv");
+define("SITE_URL", "http://localhost/megotomotiv/public_html");
+
+// Veritabanı bağlantı bilgileri (yerel)
+define("DB_HOST", "localhost");
+define("DB_USER", "u956991360_meg");
+define("DB_PASS", "Meg.668857");
+define("DB_NAME", "u956991360_megotomotiv");
+
+// Zaman dilimi ayarı
+date_default_timezone_set('Europe/Istanbul');
+
+// Oturum başlat
+session_start();
+?>
