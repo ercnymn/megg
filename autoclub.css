@@ -1,0 +1,417 @@
+/* AutoClub Marintürk özel stilleri */
+
+/* Ana renkler */
+:root {
+    --autoclub-primary: #ea580c;       /* Turuncu - ana renk */
+    --autoclub-secondary: #f97316;     /* Açık turuncu */
+    --autoclub-dark: #9a3412;          /* Koyu turuncu */
+    --autoclub-light: #fff7ed;         /* Açık turuncu arka plan */
+    --autoclub-accent: #fdba74;        /* Aksan rengi */
+    
+    /* Genel renkler */
+    --autoclub-text: #1f2937;          /* Ana metin rengi */
+    --autoclub-grey: #6b7280;          /* İkincil metin rengi */
+    --autoclub-light-grey: #f3f4f6;    /* Açık gri arka plan */
+    --autoclub-border: #e5e7eb;        /* Kenarlık rengi */
+}
+
+/* Hero bölümü */
+.autoclub-hero {
+    background-image: linear-gradient(135deg, rgba(234, 88, 12, 0.8), rgba(28, 25, 23, 0.8)), 
+                      url('../images/autoclub-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo ve başlık */
+.autoclub-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.hero-logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Buton stilleri */
+.autoclub-btn {
+    background-color: var(--autoclub-primary);
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.autoclub-btn:hover {
+    background-color: var(--autoclub-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(234, 88, 12, 0.3);
+}
+
+.autoclub-btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--autoclub-primary);
+    color: var(--autoclub-primary);
+}
+
+.autoclub-btn-outline:hover {
+    background-color: var(--autoclub-primary);
+    color: white;
+}
+
+/* Kategori kartları */
+.autoclub-category-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.autoclub-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(234, 88, 12, 0.15);
+}
+
+html.dark .autoclub-category-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .autoclub-category-card:hover {
+    box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3);
+}
+
+/* Hizmet kartları */
+.autoclub-service-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+}
+
+.autoclub-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(234, 88, 12, 0.12);
+}
+
+html.dark .autoclub-service-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .autoclub-service-card:hover {
+    box-shadow: 0 12px 25px rgba(234, 88, 12, 0.2);
+}
+
+.autoclub-service-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: var(--autoclub-light);
+    color: var(--autoclub-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Avantaj kartları */
+.autoclub-advantage-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--autoclub-primary);
+    height: 100%;
+}
+
+.autoclub-advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(234, 88, 12, 0.1);
+}
+
+html.dark .autoclub-advantage-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .autoclub-advantage-card:hover {
+    box-shadow: 0 15px 30px rgba(234, 88, 12, 0.15);
+}
+
+.autoclub-advantage-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--autoclub-light);
+    color: var(--autoclub-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Özel başlık stilleri */
+.autoclub-section-title {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--autoclub-primary);
+}
+
+.autoclub-section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--autoclub-primary);
+}
+
+.autoclub-section-title.centered::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Banner stilleri */
+.autoclub-banner {
+    background-color: var(--autoclub-primary);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.autoclub-banner::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -100px;
+    right: -50px;
+}
+
+.autoclub-banner::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    bottom: -70px;
+    left: -70px;
+}
+
+/* Fiyat listesi */
+.autoclub-price-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.autoclub-price-table th {
+    background-color: var(--autoclub-primary);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.autoclub-price-table tr:nth-child(even) {
+    background-color: var(--autoclub-light);
+}
+
+html.dark .autoclub-price-table tr:nth-child(even) {
+    background-color: rgba(234, 88, 12, 0.1);
+}
+
+.autoclub-price-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--autoclub-border);
+}
+
+html.dark .autoclub-price-table td {
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.autoclub-price-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Müşteri yorumları */
+.autoclub-testimonial {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--autoclub-primary);
+    margin-bottom: 1.5rem;
+}
+
+html.dark .autoclub-testimonial {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.autoclub-rating {
+    color: #f59e0b;
+    margin-bottom: 0.5rem;
+}
+
+.autoclub-customer {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.autoclub-customer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.autoclub-customer-name {
+    font-weight: 600;
+}
+
+.autoclub-customer-car {
+    font-size: 0.9rem;
+    color: var(--autoclub-grey);
+}
+
+/* Açılır paneller */
+.autoclub-accordion {
+    border: 1px solid var(--autoclub-border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+html.dark .autoclub-accordion {
+    border-color: #2d2d2d;
+}
+
+.autoclub-accordion-header {
+    padding: 1rem;
+    background-color: var(--autoclub-light);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+html.dark .autoclub-accordion-header {
+    background-color: rgba(234, 88, 12, 0.1);
+}
+
+.autoclub-accordion-body {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.autoclub-accordion-body-inner {
+    padding: 1rem;
+    border-top: 1px solid var(--autoclub-border);
+}
+
+html.dark .autoclub-accordion-body-inner {
+    border-top-color: #2d2d2d;
+}
+
+.autoclub-accordion.active .autoclub-accordion-body {
+    max-height: 1000px;
+}
+
+/* CTA Banner */
+.autoclub-cta {
+    background: linear-gradient(135deg, var(--autoclub-primary), var(--autoclub-dark));
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+}
+
+/* İletişim formları */
+.autoclub-form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--autoclub-border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.autoclub-form-input:focus {
+    outline: none;
+    border-color: var(--autoclub-primary);
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
+}
+
+html.dark .autoclub-form-input {
+    background-color: #1e1e1e;
+    border-color: #2d2d2d;
+    color: white;
+}
+
+/* Duyuru kartı */
+.autoclub-notice {
+    background-color: var(--autoclub-light);
+    border-left: 4px solid var(--autoclub-primary);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+html.dark .autoclub-notice {
+    background-color: rgba(234, 88, 12, 0.1);
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .autoclub-section-title {
+        font-size: 1.8rem;
+    }
+    
+    .autoclub-hero {
+        min-height: 50vh;
+    }
+    
+    .autoclub-advantage-card,
+    .autoclub-service-card {
+        margin-bottom: 1.5rem;
+    }
+}
