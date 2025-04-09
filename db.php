@@ -1,0 +1,88 @@
+<?php
+// config.php dosyasını dahil et
+require_once "config.php";
+
+// Veritabanı bağlantısı
+function db_connect() {
+    try {
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        
+        // Bağlantı hatası kontrolü
+        if ($conn->connect_error) {
+            throw new Exception("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
+        }
+        
+        // Türkçe karakter sorunu çözümü
+        $conn->set_charset("utf8");
+        
+        return $conn;
+    } catch (Exception $e) {
+        // Hata mesajını göster
+        echo '<div style="color:red; padding:20px; margin:20px; border:1px solid red;">';
+        echo '<strong>Veritabanı Hatası:</strong> ' . $e->getMessage();
+        echo '</div>';
+        return null;
+    }
+}
+
+// Sorgu çalıştırma fonksiyonu
+function db_query($sql) {
+    $conn = db_connect();
+    if (!$conn) return false;
+    
+    $result = $conn->query($sql);
+    
+    if (!$result) {
+        echo '<div style="color:red; padding:10px; margin:10px; border:1px solid red;">';
+        echo '<strong>Sorgu Hatası:</strong> ' . $conn->error;
+        echo '</div>';
+    }
+    
+    $conn->close();
+    return $result;
+}
+
+// Tek bir satır getirme fonksiyonu
+function db_fetch_row($sql) {
+    $result = db_query($sql);
+    if (!$result) return false;
+    
+    $row = $result->fetch_assoc();
+    $result->free();
+    return $row;
+}
+
+// Tüm sonuçları dizi olarak getirme
+function db_fetch_all($sql) {
+    $result = db_query($sql);
+    if (!$result) return [];
+    
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+    
+    $result->free();
+    return $rows;
+}
+
+// Güvenli sorgu için girdiyi temizleme
+function db_escape($string) {
+    $conn = db_connect();
+    if (!$conn) return $string;
+    
+    $escaped = $conn->real_escape_string($string);
+    $conn->close();
+    return $escaped;
+}
+
+// Son eklenen ID'yi alma
+function db_last_id() {
+    $conn = db_connect();
+    if (!$conn) return 0;
+    
+    $last_id = $conn->insert_id;
+    $conn->close();
+    return $last_id;
+}
+?>
