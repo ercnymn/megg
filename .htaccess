@@ -1,0 +1,47 @@
+# Rewrite engine'i etkinleştir
+RewriteEngine On
+RewriteBase /
+
+# .php uzantılarını gizle
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Varsayılan dosya index.php olsun
+DirectoryIndex index.php
+
+# Tarayıcı önbelleğini optimize etme
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Resimler için önbellek
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # CSS, JavaScript ve metin dosyaları için önbellek
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  
+  # HTML için daha kısa önbellek
+  ExpiresByType text/html "access plus 1 day"
+  
+  # Varsayılan önbellek
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Gzip sıkıştırma
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Dizin listelemeyi devre dışı bırak
+Options -Indexes
