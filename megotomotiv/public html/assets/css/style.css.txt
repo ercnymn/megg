@@ -1,0 +1,841 @@
+:root {
+    /* Ana Renkler - Meg Otomotiv (Kırmızı ve Siyah) */
+    --meg-primary: rgba(225, 29, 72, 0.8);
+    --meg-secondary: rgba(244, 63, 94, 0.8);
+    --meg-accent: rgba(251, 113, 133, 0.8);
+    --meg-light: #fff1f2;
+    --meg-dark: #1c1917;
+    
+    /* AutoClub Renkleri (Turuncu) - Saydamlık eklendi */
+    --auto-primary: rgba(234, 88, 12, 0.8);
+    --auto-secondary: rgba(249, 115, 22, 0.8);
+    --auto-accent: rgba(253, 186, 116, 0.8);
+    --auto-light: #fff7ed;
+    --auto-dark: #9a3412;
+    
+    /* Dryclean Express Renkleri (Mavi ve Beyaz) - Saydamlık eklendi */
+    --dry-primary: rgba(29, 78, 216, 0.8);
+    --dry-secondary: rgba(59, 130, 246, 0.8);
+    --dry-accent: rgba(147, 197, 253, 0.8);
+    --dry-light: #eff6ff;
+    --dry-dark: #1e3a8a;
+    
+    /* GoMarine Renkleri (Turkuaz ve Beyaz) - Saydamlık eklendi */
+    --marine-primary: rgba(8, 145, 178, 0.8);
+    --marine-secondary: rgba(6, 182, 212, 0.8);
+    --marine-accent: rgba(103, 232, 249, 0.8);
+    --marine-light: #ecfeff;
+    --marine-dark: #155e75;
+    
+    /* Meg Tekne Hizmetleri Renkleri (Turkuaz ve Siyah) - Saydamlık eklendi */
+    --boat-primary: rgba(14, 116, 144, 0.8);
+    --boat-secondary: rgba(6, 182, 212, 0.8);
+    --boat-accent: rgba(34, 211, 238, 0.8);
+    --boat-light: #cffafe;
+    --boat-dark: #1c1917;
+    
+    /* Meg VIP Taşıma Renkleri (Siyah ve Altın) - Saydamlık eklendi */
+    --vip-primary: rgba(133, 77, 14, 0.8);
+    --vip-secondary: rgba(161, 98, 7, 0.8);
+    --vip-accent: rgba(250, 204, 21, 0.8);
+    --vip-light: #fef9c3;
+    --vip-dark: #1c1917;
+    
+    /* Dark Mode Colors */
+    --bg-light: #ffffff;
+    --text-light: #333333;
+    --card-light: #ffffff;
+    --border-light: #e5e7eb;
+    
+    --bg-dark: #121212;
+    --text-dark: #f3f4f6;
+    --card-dark: #1e1e1e;
+    --border-dark: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-light);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
+
+html.dark body {
+    color: var(--text-dark);
+    background-color: var(--bg-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Logo Styles */
+.real-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.autoclub-logo, .dryclean-logo, .gomarine-logo, .megboat-logo, .viptransport-logo {
+    height: 50px;
+    width: 200px;
+    object-fit: contain;
+    display: inline-block;
+}
+
+.hero-logo {
+    height: 65px;
+    width: 268px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.meg-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.meg-logo-lg {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.card-logo {
+    position: absolute;
+    top: -30px;
+    left: 15px;
+    z-index: 2;
+    background: var(--card-light);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+html.dark .card-logo {
+    background: var(--card-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-logo img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.footer-logo {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+/* Main Logo */
+.main-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 1.8rem;
+    margin-left: 10px;
+    line-height: 1;
+}
+
+.logo-text span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+html.dark .logo-text span {
+    color: #aaa;
+}
+
+.logo-symbol {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--meg-primary);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-symbol::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Business cards */
+.business-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 440px; /* Daha fazla alan ekledik */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Mobil görünümde kartlar arası boşluk */
+    background-color: var(--card-light);
+}
+
+html.dark .business-card {
+    background-color: var(--card-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.business-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .business-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.business-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.card-body {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+/* Service card styles */
+.service-card {
+    background-color: var(--card-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+html.dark .service-card {
+    background-color: var(--card-dark);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+html.dark .service-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: var(--auto-light);
+    color: var(--auto-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(225, 29, 72, 0.5), rgba(28, 25, 23, 0.5));
+    z-index: 1;
+}
+
+.hero-bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    z-index: 0;
+}
+
+.hero-bg-item {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--card-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+html.dark .header {
+    background-color: var(--card-dark);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .header.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    color: var(--text-light);
+}
+
+html.dark .nav-link {
+    color: var(--text-dark);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--meg-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--meg-primary);
+    font-weight: 600;
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+html.dark .mobile-menu-toggle {
+    color: var(--text-dark);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    transform: translateY(0);
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1002;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay: calc(var(--i) * 0.1s);
+}
+
+.mobile-menu.open .mobile-nav-links li {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-nav-links a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+    display: inline-block;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--meg-secondary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+    position: relative;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--meg-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--meg-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--meg-primary);
+    color: var(--meg-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--meg-primary);
+    color: white;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 990;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-light);
+}
+
+html.dark .dark-mode-toggle {
+    color: var(--text-dark);
+    background-color: var(--card-dark);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Back to top button */
+.back-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--meg-primary);
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    z-index: 990;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--meg-dark);
+    transform: translateY(-3px);
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    color: var(--text-light);
+}
+
+html.dark .section-title {
+    color: var(--text-dark);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--meg-secondary);
+}
+
+/* Loading indicator */
+.loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--meg-primary);
+    z-index: 2000;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.loading-indicator.loading {
+    animation: loading 2s infinite ease-in-out;
+}
+
+@keyframes loading {
+    0% { transform: scaleX(0); }
+    50% { transform: scaleX(0.5); }
+    100% { transform: scaleX(0); transform-origin: right; }
+}
+
+/* Footer */
+.footer {
+    background-color: #0f172a;
+    color: white;
+    padding: 80px 0 30px;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background-color: var(--meg-secondary);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--meg-secondary);
+    transform: translateY(-3px);
+}
+
+/* Scroll-based animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-up {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse animation for interactive elements */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Lazy Load Images */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .header {
+        padding: 1rem;
+    }
+    
+    .section {
+        padding: 70px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .business-card {
+        margin-bottom: 2rem;
+    }
+    
+    .real-logo, .autoclub-logo, .dryclean-logo, .gomarine-logo, .megboat-logo, .viptransport-logo {
+        height: 40px;
+    }
+    
+    .hero-logo {
+        height: 60px;
+    }
+    
+    .dark-mode-toggle {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .back-to-top {
+        bottom: 15px;
+        right: 65px;
+    }
+}
